@@ -1,8 +1,13 @@
 # Bitcoin/Litecoin: Generate Signature
 
-## Request body <a href="#psbt-request-body" id="psbt-request-body"></a>
+Bitcoin and Litecoin chains support the following signature `kinds`:
 
-<table><thead><tr><th width="187">Property</th><th width="189">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>kind</code><mark style="color:red;">*</mark></td><td>String</td><td>For Bitcoin, always <code>Psbt</code></td></tr><tr><td><code>psbt</code><mark style="color:red;">*</mark></td><td>Hex String</td><td>The hex encoded psbt as shown below</td></tr><tr><td><code>externalId</code></td><td>(Optional) String</td><td>A unique ID from your system. It can be leveraged to be used as an idempotency key (read more <a href="../../../advanced-topics/api-idempotency.md">here</a>)</td></tr></tbody></table>
+- `Psbt`: Fully sign a PSBT, partially signed bitcoin transaction.
+- `Bip322`: Generates the signature for a generic message defined in [BIP-322](https://github.com/bitcoin/bips/blob/master/bip-0322.mediawiki).
+
+## PSBT Signature <a href="#psbt-request-body" id="psbt-request-body"></a>
+
+<table><thead><tr><th width="187">Property</th><th width="189">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>kind</code><mark style="color:red;">*</mark></td><td>String</td><td><code>Psbt</code></td></tr><tr><td><code>psbt</code><mark style="color:red;">*</mark></td><td>Hex String</td><td>The hex encoded PSBT as shown below</td></tr><tr><td><code>externalId</code></td><td>(Optional) String</td><td>A unique ID from your system. It can be leveraged to be used as an idempotency key (read more <a href="../../../advanced-topics/api-idempotency.md">here</a>)</td></tr></tbody></table>
 
 ### Sample request body <a href="#sample-psbt-request" id="sample-psbt-request"></a>
 
@@ -103,4 +108,50 @@ const res = await dfnsClient.wallets.generateSignature({
   walletId,
   body: { kind: 'Psbt', psbt: `0x${psbt.toHex()}` },
 })
+```
+
+## BIP-322 Generic Message Signature <a href="#bip322-signature-request-body" id="bip322-signature-request-body"></a>
+
+Generates the signature for a generic message defined in [BIP-322](https://github.com/bitcoin/bips/blob/master/bip-0322.mediawiki).
+
+### Request body <a href="#bip322-signature-request-body" id="bip322-signature-request-body"></a>
+
+<table><thead><tr><th width="193">Property</th><th width="170">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>kind</code><mark style="color:red;">*</mark></td><td>String</td><td><code>Bip322</code></td></tr><tr><td><code>message</code><mark style="color:red;">*</mark></td><td>String</td><td>The generic message hex encoded.</td></tr><tr><td><code>format</code></td><td>(Optional) String</td><td>Either <code>Simple</code> or <code>Full</code>. Defaults to <code>Simple</code> if not present. The formatted signature is returned in the <code>signedData</code> field in the response.</td></tr><tr><td><code>externalId</code></td><td>(Optional) String</td><td>A unique ID from your system. It can be leveraged to be used as an idempotency key (read more <a href="../../../advanced-topics/api-idempotency.md">here</a>)</td></tr></tbody></table>
+
+### Sample request body <a href="#sample-bip322-request" id="sample-bip322-request"></a>
+
+```shell
+{
+  "kind": "Bip322",
+  "message": "0x49206c6f76652044666e73"
+}
+```
+
+### 200 response example <a href="#bip322-response-example" id="bip322-response-example"></a>
+
+```json
+{
+  "id": "sig-7dmih-01orr-xxxxxxxxxxxxxxxx",
+  "walletId": "wa-36a0p-pdil7-xxxxxxxxxxxxxxxx",
+  "network": "BitcoinTestnet3",
+  "requester": {
+    "userId": "us-3v1ag-v6b36-xxxxxxxxxxxxxxxx",
+    "tokenId": "to-7mkkj-c831n-xxxxxxxxxxxxxxxx",
+    "appId": "ap-341e6-12nj6-xxxxxxxxxxxxxxxx"
+  },
+  "requestBody": {
+    "kind": "Bip322",
+    "hash": "0x49206c6f76652044666e73"
+  },
+  "status": "Signed",
+  "signature": {
+    "r": "0x883613c2f19e4ab70f82c533950fb9060ac366a3a64d77950c89866dfe07c926",
+    "s": "0x3fb815f34db5ebc9e97dee46500b75494717cb69adec5f01e17b4a58c50f9bfa",
+    "recid": 1,
+    "encoded": "0x3045022100883613c2f19e4ab70f82c533950fb9060ac366a3a64d77950c89866dfe07c92602203fb815f34db5ebc9e97dee46500b75494717cb69adec5f01e17b4a58c50f9bfa"
+  },
+  "signedData": "0x02483045022100883613c2f19e4ab70f82c533950fb9060ac366a3a64d77950c89866dfe07c92602203fb815f34db5ebc9e97dee46500b75494717cb69adec5f01e17b4a58c50f9bfa012103e6be69fe373e07962698243fb3d41b5b24e16a461866bd1813afcf9b53e1da6e",
+  "dateRequested": "2024-10-25T17:47:48.068Z",
+  "dateSigned": "2024-10-25T17:47:48.749Z"
+}
 ```

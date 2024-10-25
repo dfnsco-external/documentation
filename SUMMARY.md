@@ -113,6 +113,7 @@
     * [Algorand: Generate Signature](api-docs/wallets/generate-signature-from-wallet/algorand-generate-signature.md)
     * [Bitcoin/Litecoin: Generate Signature](api-docs/wallets/generate-signature-from-wallet/bitcoin-generate-signature.md)
     * [Cardano: Generate Signature](api-docs/wallets/generate-signature-from-wallet/cardano-generate-signature.md)
+    * [Cosmos Appchain: Generate Signature](api-docs/wallets/generate-signature-from-wallet/cosmos-generate-signature.md)
     * [EVM: Generate Signature](api-docs/wallets/generate-signature-from-wallet/evm-generate-signature.md)
     * [Polkadot: Generate Signature](api-docs/wallets/generate-signature-from-wallet/polkadot-generate-signature.md)
     * [Solana: Generate Signature](api-docs/wallets/generate-signature-from-wallet/solana-generate-signature.md)
