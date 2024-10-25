@@ -4,7 +4,7 @@ EVM chains like Ethereum, Polygon, BSC, Arbitrum, etc support the following sign
 
 * `Transaction`: Generates a fully signed transaction ready for broadcasting yourself.
 * `Message`: Generates a signature for an arbitrary message.
-* `EIP712`: Generates the signature for typed structured data defined in [EIP-712](https://eips.ethereum.org/EIPS/eip-712).
+* `Eip712`: Generates the signature for typed structured data defined in [EIP-712](https://eips.ethereum.org/EIPS/eip-712).
 * `Hash`: Generates the signature for the hash digest of the original message.
 
 ## Transaction Signature <a href="#transaction-request-body" id="transaction-request-body"></a>
