@@ -2,7 +2,7 @@
 
 `GET /wallets/{walletId}/assets`
 
-Retrieves a list of assets owned by the specified Wallet.
+Retrieves a list of assets owned by the specified Wallet.  Note return values vary by chain as shown below.&#x20;
 
 {% hint style="info" %}
 * Request headers required. See [Request Headers](../../getting-started/request-headers.md) for more information.
@@ -23,7 +23,7 @@ Retrieves a list of assets owned by the specified Wallet.
 | -------------- | ------------------------------------------------------------------------ |
 | `walletId`     | Unique identifier of the `Wallet`. ex. `wa-1f04s-lqc9q-xxxxxxxxxxxxxxxx` |
 
-## Response <a href="#response" id="response"></a>
+## Response (EVM) <a href="#response" id="response"></a>
 
 ### 200 Response example <a href="#response-example" id="response-example"></a>
 
@@ -205,7 +205,7 @@ Get TRON's TRC-10 fungible tokens
 
 
 
-#### TRC-20 <a href="#trc10-request-body" id="trc10-request-body"></a>
+### TRC-20 <a href="#trc10-request-body" id="trc10-request-body"></a>
 
 Get fungible tokens that implement the TRC-20 smart contract specification.
 
