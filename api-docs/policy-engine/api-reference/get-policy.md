@@ -26,7 +26,7 @@
   "rule": {
     "kind": "TransactionAmountLimit",
     "configuration": {
-      "currency": "EUR",
+      "currency": "USD",
       "limit": "1000"
     }
   },

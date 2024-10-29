@@ -96,7 +96,7 @@ If the fiat amount of the wallet activity cannot be evaluated for any reason (eg
     "kind": "TransactionAmountLimit",
     "configuration": {
       "limit": 1000,
-      "currency": "EUR",
+      "currency": "USD",
     },
   }
 }
@@ -104,7 +104,7 @@ If the fiat amount of the wallet activity cannot be evaluated for any reason (eg
 
 **Configuration**
 
-<table><thead><tr><th width="154">Property</th><th width="154">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>limit</code><mark style="color:red;">*</mark></td><td>Positive Integer</td><td>Amount limit in <code>currency</code></td></tr><tr><td><code>currency</code><mark style="color:red;">*</mark></td><td>String</td><td>Fiat currency, either <code>EUR</code> or <code>USD</code></td></tr></tbody></table>
+<table><thead><tr><th width="154">Property</th><th width="154">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>limit</code><mark style="color:red;">*</mark></td><td>Positive Integer</td><td>Amount limit in <code>currency</code></td></tr><tr><td><code>currency</code><mark style="color:red;">*</mark></td><td>String</td><td>Fiat currency, currently only  <code>USD</code></td></tr></tbody></table>
 
 
 
@@ -122,7 +122,7 @@ If the fiat amount of any wallet activity in the given timeframe cannot be evalu
     "kind": "TransactionAmountVelocity",
     "configuration": {
       "limit": 1000,
-      "currency": "EUR",
+      "currency": "USD",
       "timeframe": 60,
     },
   },
@@ -131,7 +131,7 @@ If the fiat amount of any wallet activity in the given timeframe cannot be evalu
 
 **Configuration**
 
-<table><thead><tr><th width="154">Property</th><th width="154">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>limit</code><mark style="color:red;">*</mark></td><td>Positive Integer</td><td>Amount limit in <code>currency</code></td></tr><tr><td><code>currency</code><mark style="color:red;">*</mark></td><td>String</td><td>Fiat currency, either <code>EUR</code> or <code>USD</code></td></tr><tr><td><code>timeframe</code><mark style="color:red;">*</mark></td><td>Positive Integer</td><td>Time period in minutes. Minimum 1, Maximum 43,200.</td></tr></tbody></table>
+<table><thead><tr><th width="154">Property</th><th width="154">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>limit</code><mark style="color:red;">*</mark></td><td>Positive Integer</td><td>Amount limit in <code>currency</code></td></tr><tr><td><code>currency</code><mark style="color:red;">*</mark></td><td>String</td><td>Fiat currency, currently only <code>USD</code></td></tr><tr><td><code>timeframe</code><mark style="color:red;">*</mark></td><td>Positive Integer</td><td>Time period in minutes. Minimum 1, Maximum 43,200.</td></tr></tbody></table>
 
 
 
@@ -521,7 +521,7 @@ Here's an Approval object example
     {
       "policyId":"plc-...",
       "triggerStatus":"Triggered",
-      "reason":"Cumulative transfer amount (EUR 20) is above limit (EUR 2)."
+      "reason":"Cumulative transfer amount (USD 20) is above limit (USD 2)."
     }
   ],
   "decisions":[

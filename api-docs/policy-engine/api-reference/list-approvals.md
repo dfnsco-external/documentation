@@ -45,7 +45,7 @@ Note: `TriggerStatus` of `Skipped` means the rule did not trigger for the given 
     {
       "policyId":"plc-...",
       "triggerStatus":"Triggered",
-      "reason":"Cumulative transfer amount (EUR 20) is above limit (EUR 2)."
+      "reason":"Cumulative transfer amount (USD 20) is above limit (USD 2)."
     }
   ],
   "decisions":[
