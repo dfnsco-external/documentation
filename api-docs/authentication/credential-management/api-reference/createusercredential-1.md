@@ -24,7 +24,7 @@ The permissions apply to the application only.
 
 ## Request body
 
-<table><thead><tr><th width="254">Field</th><th width="110.33333333333331">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>challengeIdentifier</code> <mark style="color:red;">*</mark></td><td><code>String</code></td><td>challenge identifier returned by the <a href="createusercredentialchallenge.md">Create User Credential Challenge</a> call</td></tr><tr><td><code>credentialName</code> <mark style="color:red;">*</mark></td><td><code>String</code></td><td>name the user is assigning to this credential</td></tr><tr><td><code>credentialKind</code> <mark style="color:red;">*</mark></td><td><code>String</code></td><td>kind of credential being registered (see <a href="../#credential-kinds">Credential Kind</a>)</td></tr><tr><td><code>credentialInfo</code> <mark style="color:red;">*</mark></td><td><code>Object</code></td><td>An object containing information about the credential being registered</td></tr></tbody></table>
+<table><thead><tr><th width="254">Field</th><th width="110.33333333333331">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>challengeIdentifier</code> <mark style="color:red;">*</mark></td><td><code>String</code></td><td>Challenge identifier returned by the <a href="createusercredentialchallenge.md">Create User Credential Challenge</a> call</td></tr><tr><td><code>credentialName</code> <mark style="color:red;">*</mark></td><td><code>String</code></td><td>Name the user is assigning to this credential</td></tr><tr><td><code>credentialKind</code> <mark style="color:red;">*</mark></td><td><code>String</code></td><td>Kind of credential being registered (see <a href="../#credential-kinds">Credential Kind</a>)</td></tr><tr><td><code>credentialInfo</code> <mark style="color:red;">*</mark></td><td><code>Object</code></td><td>An object containing information about the credential being registered</td></tr><tr><td><code>encryptedPrivateKey</code></td><td><code>String</code></td><td>Only for Password Protected Key and Recovery Key</td></tr></tbody></table>
 
 ### Fido2 Credential
 
@@ -55,7 +55,7 @@ The permissions apply to the application only.
 {
   "challengeIdentifier":"eyJ0e...fQNA",
   "credentialName": "My Credential",
-  "kind":"Key",
+  "credentialKind":"Key",
   "credentialInfo":{
     "credId":"6Ca6tAOFTx2odyJBnCoRO-gPvfpfy0EOoOcEaxfxIOk",
     "clientData":"eyJ0eXBlIjoia2V5LmNyZWF0ZSIsImNoYWxsZW5nZSI6Ik1XTTBNbVk1WVRRME1EUmlOemRoTlRGaE56WTVPRFF3TldJNVpUUTRZMlJoT0RaaU5EazNaVFl6T1RFNU9HWXlNRGN4WmpCall6azRNbVE1WXpZMU1BIiwib3JpZ2luIjoiaHR0cHM6Ly9hcHAuZGZucy5uaW5qYSIsImNyb3NzT3JpZ2luIjpmYWxzZX0",
@@ -74,7 +74,7 @@ The permissions apply to the application only.
 {
   "challengeIdentifier":"eyJ0e...fQNA",
   "credentialName": "My Recovery Credential",
-  "kind":"PasswordProtectedKey",
+  "credentialKind":"PasswordProtectedKey",
   "credentialInfo":{
     "credId":"GMkW0zlmcoMxI1OX0Z96LL_Mz7dgeu6vOH5_TOeGyNk",
     "clientData":"eyJ0eXBlIjoia2V5LmNyZWF0ZSIsImNoYWxsZW5nZSI6Ik1XTTBNbVk1WVRRME1EUmlOemRoTlRGaE56WTVPRFF3TldJNVpUUTRZMlJoT0RaaU5EazNaVFl6T1RFNU9HWXlNRGN4WmpCall6azRNbVE1WXpZMU1BIiwib3JpZ2luIjoiaHR0cHM6Ly9hcHAuZGZucy5uaW5qYSIsImNyb3NzT3JpZ2luIjpmYWxzZX0",
@@ -94,7 +94,7 @@ The permissions apply to the application only.
 {
   "challengeIdentifier":"eyJ0e...fQNA",
   "credentialName": "My Recovery Credential",
-  "kind":"RecoveryKey",
+  "credentialKind":"RecoveryKey",
   "credentialInfo":{
     "credId":"GMkW0zlmcoMxI1OX0Z96LL_Mz7dgeu6vOH5_TOeGyNk",
     "clientData":"eyJ0eXBlIjoia2V5LmNyZWF0ZSIsImNoYWxsZW5nZSI6Ik1XTTBNbVk1WVRRME1EUmlOemRoTlRGaE56WTVPRFF3TldJNVpUUTRZMlJoT0RaaU5EazNaVFl6T1RFNU9HWXlNRGN4WmpCall6azRNbVE1WXpZMU1BIiwib3JpZ2luIjoiaHR0cHM6Ly9hcHAuZGZucy5uaW5qYSIsImNyb3NzT3JpZ2luIjpmYWxzZX0",
