@@ -1,6 +1,6 @@
 # Update Wallet
 
-`PUT /wallets/{:walletid}`
+`PUT /wallets/{walletid}`
 
 Updates the name or externalID of an existing `Wallet.`&#x20;
 
