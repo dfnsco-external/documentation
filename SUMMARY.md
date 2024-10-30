@@ -85,6 +85,7 @@
     * [Recover User](api-docs/authentication/user-recovery/createUserRecovery.md)
 * [Wallets](api-docs/wallets/README.md)
   * [Create Wallet](api-docs/wallets/create-wallet/README.md)
+  * [Update Wallet](api-docs/wallets/update-wallet.md)
   * [Delegate Wallet](api-docs/wallets/delegate-wallet.md)
   * [Get Wallet by ID](api-docs/wallets/get-wallet-by-id.md)
   * [List Wallets](api-docs/wallets/list-wallets.md)
