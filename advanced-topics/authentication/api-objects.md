@@ -119,7 +119,7 @@ o2NmbXRmcGFja2VkZ2F0dFN0bXSjY2FsZyZjc2lnWEcwRQIgVHg5PQ_mEyPi_FRZdkgT-SXmspljVaOW
 
 
 
-### Key Credential
+### Key, Password Protected Key and Recovery credential
 
 Unlike when using `Fido2 credential`, the attestation data object needs to be created manually for `Key credential`. Once created the object needs to be "stringified" and base64url encoded.
 
