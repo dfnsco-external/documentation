@@ -10,34 +10,4 @@ When using the high-level Transfers APIs, Dfns supports various assets across mu
 
 Each asset type requires specific parameters, such as contract addresses for ERC-20 and ERC-721 tokens, or asset IDs for non-EVM assets. Transactions involve specifying the asset type, destination address, and amount, with additional fields varying by asset type. &#x20;
 
-Here is a summary of the assets currently supported by the Dfns Transfer API:&#x20;
-
-| **Blockchain Network**    | **Native Cryptocurrency** | **Token Standards**                      |
-| ------------------------- | ------------------------- | ---------------------------------------- |
-| Algorand                  | ALGO                      | ASA                                      |
-| Arbitrum                  | ETH                       | ERC-20, ERC-721                          |
-| Avalanche C-Chain         | AVAX                      | ERC-20, ERC-721                          |
-| Base                      | ETH                       | ERC-20, ERC-721                          |
-| Bitcoin                   | BTC                       | N/A                                      |
-| BSC (Binance Smart Chain) | BNB                       | BEP-20, BEP-721                          |
-| Cardano                   | ADA                       | N/A                                      |
-| Ethereum                  | ETH                       | ERC-20, ERC-721                          |
-| Fantom Opera              | FTM                       | ERC-20, ERC-721                          |
-| Internet Computer         | ICP                       | ICRC (not generic)                       |
-| Kusama                    | KSM                       | N/A                                      |
-| Litecoin                  | LTC                       | N/A                                      |
-| Optimism                  | ETH                       | ERC-20, ERC-721                          |
-| Origyn                    | OGY                       | N/A                                      |
-| Polkadot                  | DOT                       | N/A                                      |
-| Polygon                   | POL (fka MATIC)           | ERC-20, ERC-721                          |
-| Solana                    | SOL                       | SPL, SPL 2022                            |
-| Stellar                   | XLM                       | SEP-41 (includes Stellar Classic Assets) |
-| Tezos                     | XTZ                       | N/A                                      |
-| Ton                       | TON                       | TEP-74 (Jetton)                          |
-| Tron                      | TRX                       | TRC-10, TRC-20, TRC-721                  |
-| XRP Ledger (Ripple)       | XRP                       | N/A                                      |
-
-\
-This table highlights the blockchains, their native cryptocurrencies, and supported token standards (e.g., ERC-20 for Ethereum-based tokens).  For detailed information, refer to the documentation[ here](https://docs.dfns.co/d/api-docs/wallets/transfer-asset-from-wallet).
-
-\
+Please find a summary of the assets currently supported by the Dfns Transfer API under [Supported Blockchains](https://docs.dfns.co/d/api-docs/wallets#supported-networks).
