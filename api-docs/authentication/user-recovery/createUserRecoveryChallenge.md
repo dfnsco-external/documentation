@@ -69,9 +69,9 @@ Format:
     // name that will be displayed to the user on the WebAuthn client's display
     "displayName": "string"
   },
-  // temporary authentication token that is used to identify the registration session with the matching call to Complete User Registration
+  // temporary authentication token that is used to identify the recovery session with the matching call to Recover User
   "temporaryAuthenticationToken": "string",
-  // list of the kinds of credentials that the user can use when registering
+  // list of the kinds of credentials that the user can use when recovering
   "supportedCredentialKinds": {
     // list of the credential kinds that are supported as a first factor credential
     "firstFactor": ["string"],
