@@ -1,4 +1,4 @@
-# Wallet Import
+# Import Wallet
 
 `POST /wallets/import`
 
@@ -43,7 +43,7 @@ The wallet private key which you need to import will never be transmitted to Dfn
 
 #### encryptedKeyShares
 
-<table data-full-width="false"><thead><tr><th width="201">Property</th><th width="174">Type - Required/Optional</th><th>Description</th></tr></thead><tbody><tr><td>signerId</td><td>String - Required</td><td>ID of the signer returned from <code>GET /signers</code></td></tr><tr><td>encryptedKeyShare</td><td>String - Required</td><td>The key share encrypted with the private key created for the import operation</td></tr></tbody></table>
+<table data-full-width="false"><thead><tr><th width="201">Property</th><th width="174">Type - Required/Optional</th><th>Description</th></tr></thead><tbody><tr><td>signerId</td><td>String - Required</td><td>ID of the signer returned from <code>GET /signers</code></td></tr><tr><td>encryptedKeyShare</td><td>String - Required</td><td>The key share encrypted with the signer encryption key (public key, asymmetric encryption)</td></tr></tbody></table>
 
 #### Example JSON
 
