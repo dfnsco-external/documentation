@@ -36,12 +36,10 @@ eyJ0eXBlIjoid2ViYXV0aG4uY3JlYXRlIiwiY2hhbGxlbmdlIjoiWTJndE16bGxORFl0YUdKdGRtMHRP
 
 Unlike when using `Fido2 credential`, the client data object needs to be created manually for `Key credential`. Once created the object needs to be "stringified" and base64url encoded.
 
-| field       | type      | description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| ----------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| type        | `string`  | <p> <code>key.create</code> for <a href="../../api-docs/authentication/registration/completeUserRegistration.md#key-credential">registration</a> and <a href="../../api-docs/authentication/credential-management/api-reference/createusercredential-1.md#fido2-credential">new credential</a><br><code>key.get</code> for <a href="../../api-docs/authentication/login/completeLogin.md#key-credential">login</a> and <a href="../../api-docs/authentication/user-action-signing/completeUserActionSigning.md#key-credential">action signing</a></p> |
-| challenge   | `string`  | The challenge returned from the init call. The challenge is already base64url encoded, there is no need to encode it                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| origin      | `string`  | The origin in which the app is being executed                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| crossOrigin | `boolean` | A flag indicating if the current call is running cross origin; in most cases this should be `false`                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| field     | type     | description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| --------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| type      | `string` | <p> <code>key.create</code> for <a href="../../api-docs/authentication/registration/completeUserRegistration.md#key-credential">registration</a> and <a href="../../api-docs/authentication/credential-management/api-reference/createusercredential-1.md#fido2-credential">new credential</a><br><code>key.get</code> for <a href="../../api-docs/authentication/login/completeLogin.md#key-credential">login</a> and <a href="../../api-docs/authentication/user-action-signing/completeUserActionSigning.md#key-credential">action signing</a></p> |
+| challenge | `string` | The challenge returned from the init call. The challenge is already base64url encoded, there is no need to encode it                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 
 #### Example
 
@@ -49,16 +47,14 @@ Unlike when using `Fido2 credential`, the client data object needs to be created
 // Client data object
 {
   "challenge":"Y2gtNzloaHQtbXJlb2stOGFwOHFtMmVpZWZ0amxhZw",
-  "crossOrigin":false,
-  "origin":"https://app.dfns.ninja",
   "type":"key.create"
 }
 
 // Stringify
-'{"challenge":"Y2gtNzloaHQtbXJlb2stOGFwOHFtMmVpZWZ0amxhZw","crossOrigin":false,"origin":"https://app.dfns.ninja","type":"key.create"}'
+'{"challenge":"Y2gtNzloaHQtbXJlb2stOGFwOHFtMmVpZWZ0amxhZw","type":"key.create"}'
 
 // Base64url
-eyJjaGFsbGVuZ2UiOiJZMmd0Tnpsb2FIUXRiWEpsYjJzdE9HRndPSEZ0TW1WcFpXWjBhbXhoWnciLCJjcm9zc09yaWdpbiI6ZmFsc2UsIm9yaWdpbiI6Imh0dHBzOi8vYXBwLmRmbnMubmluamEiLCJ0eXBlIjoia2V5LmNyZWF0ZSJ9
+eyJjaGFsbGVuZ2UiOiJZMmd0Tnpsb2FIUXRiWEpsYjJzdE9HRndPSEZ0TW1WcFpXWjBhbXhoWnciLCJ0eXBlIjoia2V5LmNyZWF0ZSJ9
 ```
 
 ## Attestation Data
@@ -137,15 +133,13 @@ The attestation data object contains a `signature`. This section explains how to
 {% hint style="danger" %}
 In order for the server to properly verify the signature, the `clientDataHash` needs to be computed in a reproducible way. That means the "stringified" operation of the client data object needs to be done with the following requirements:
 
-* Keys need to be sorted in alphabetical order: `challenge` first, then `crossOrigin`, `origin` and finally `type`
+* Keys need to be sorted in alphabetical order: `challenge` first, and then `type`
 * Separators need to be `:` and `,` without any space before and after
 
 For example given the following client data object
 
 <pre class="language-typescript"><code class="lang-typescript"><strong>{
 </strong>  "challenge":"Y2gtNzloaHQtbXJlb2stOGFwOHFtMmVpZWZ0amxhZw",
-  "crossOrigin":false,
-  "origin":"https://app.dfns.ninja",
   "type":"key.create"
 }
 </code></pre>
@@ -153,7 +147,7 @@ For example given the following client data object
 The "stringified" version needs to be
 
 ```
-{"challenge":"Y2gtNzloaHQtbXJlb2stOGFwOHFtMmVpZWZ0amxhZw","crossOrigin":false,"origin":"https://app.dfns.ninja","type":"key.create"}
+{"challenge":"Y2gtNzloaHQtbXJlb2stOGFwOHFtMmVpZWZ0amxhZw","type":"key.create"}
 ```
 {% endhint %}
 
@@ -163,20 +157,18 @@ The "stringified" version needs to be
 // Client data object
 {
   "challenge":"Y2gtNzloaHQtbXJlb2stOGFwOHFtMmVpZWZ0amxhZw",
-  "crossOrigin":false,
-  "origin":"https://app.dfns.ninja",
   "type":"key.create"
 }
 
 // "Stringified" client data
-{"challenge":"Y2gtNzloaHQtbXJlb2stOGFwOHFtMmVpZWZ0amxhZw","crossOrigin":false,"origin":"https://app.dfns.ninja","type":"key.create"}
+{"challenge":"Y2gtNzloaHQtbXJlb2stOGFwOHFtMmVpZWZ0amxhZw","type":"key.create"}
 
 // SHA256 hex encoded
-db3828fcdf1782726a7c0c3977679be5fa5a69efa87b295a31b3579a0149edf3
+cba00cc2224e76aa12e42cd0e30a1a73e5525ed0dccb7e29e709fee3a1e98dec
 
 // Credential info fingerprint object
 {
-  "clientDataHash": "db3828fcdf1782726a7c0c3977679be5fa5a69efa87b295a31b3579a0149edf3",
+  "clientDataHash": "cba00cc2224e76aa12e42cd0e30a1a73e5525ed0dccb7e29e709fee3a1e98dec",
   "publicKey": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE9cG2mE4DWHbwwlLRSKBLZ9m6+QsC\neOqWJh1x5VvRHZMaPLQlRrhhgbHm8una4h8S+L5o8sV8Hvujbl3MrATj3Q==\n-----END PUBLIC KEY-----\n"
 }
 ```
@@ -199,7 +191,7 @@ For example given the following client data object
 
 ```typescript
 {
-  "clientDataHash": "db3828fcdf1782726a7c0c3977679be5fa5a69efa87b295a31b3579a0149edf3",
+  "clientDataHash": "cba00cc2224e76aa12e42cd0e30a1a73e5525ed0dccb7e29e709fee3a1e98dec",
   "publicKey": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE9cG2mE4DWHbwwlLRSKBLZ9m6+QsC\neOqWJh1x5VvRHZMaPLQlRrhhgbHm8una4h8S+L5o8sV8Hvujbl3MrATj3Q==\n-----END PUBLIC KEY-----\n"
 }
 ```
@@ -207,7 +199,7 @@ For example given the following client data object
 The "stringified" version needs to be
 
 ```
-{"clientDataHash":"db3828fcdf1782726a7c0c3977679be5fa5a69efa87b295a31b3579a0149edf3","publicKey":"-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE9cG2mE4DWHbwwlLRSKBLZ9m6+QsC\neOqWJh1x5VvRHZMaPLQlRrhhgbHm8una4h8S+L5o8sV8Hvujbl3MrATj3Q==\n-----END PUBLIC KEY-----\n"}
+{"clientDataHash":"cba00cc2224e76aa12e42cd0e30a1a73e5525ed0dccb7e29e709fee3a1e98dec","publicKey":"-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE9cG2mE4DWHbwwlLRSKBLZ9m6+QsC\neOqWJh1x5VvRHZMaPLQlRrhhgbHm8una4h8S+L5o8sV8Hvujbl3MrATj3Q==\n-----END PUBLIC KEY-----\n"}
 ```
 {% endhint %}
 
@@ -223,8 +215,6 @@ The signature also needs to be generated with pre-defined hash algorithm and enc
 keyOrPasswordClientData: {
   type: 'key.create',
   challenge: challenge,
-  origin: this.appOrigin,
-  crossOrigin: false,
 }
 
 const clientData = Buffer.from(JSON.stringify(supportedCredentials.credentialData.keyOrPasswordClientData))
@@ -238,7 +228,7 @@ const signature = crypto.sign(undefined, signaturePayload, newKey.privateKey)
 
 #### Example
 
-<pre class="language-typescript"><code class="lang-typescript">// Hex encoded signature of the string '{"clientDataHash":"db3828fcdf1782726a7c0c3977679be5fa5a69efa87b295a31b3579a0149edf3","publicKey":"-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE9cG2mE4DWHbwwlLRSKBLZ9m6+QsC\neOqWJh1x5VvRHZMaPLQlRrhhgbHm8una4h8S+L5o8sV8Hvujbl3MrATj3Q==\n-----END PUBLIC KEY-----\n"}'
+<pre class="language-typescript"><code class="lang-typescript">// Hex encoded signature of the string '{"clientDataHash":"cba00cc2224e76aa12e42cd0e30a1a73e5525ed0dccb7e29e709fee3a1e98dec","publicKey":"-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE9cG2mE4DWHbwwlLRSKBLZ9m6+QsC\neOqWJh1x5VvRHZMaPLQlRrhhgbHm8una4h8S+L5o8sV8Hvujbl3MrATj3Q==\n-----END PUBLIC KEY-----\n"}'
 30460221008e0109848c6fc83004d0e6c7fdac71dae8524fc5a29081d012f865416986ce29022100f47e1bee6c5175c4488b143c936c68fac1ae7e7931e76c677d46331ed149d17d
 
 // Attestation Data object
