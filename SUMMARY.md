@@ -183,6 +183,10 @@
     * [Create Exchange Withdrawal](integrations/exchanges/api-reference/create-exchange-withdrawal.md)
 * [AML / KYT](integrations/aml-kyt/README.md)
   * [Chainalysis](integrations/aml-kyt/chainalysis.md)
+* [Staking](integrations/staking/README.md)
+  * [API Reference](integrations/staking/api-reference/README.md)
+    * [Create Stake](integrations/staking/api-reference/create-stake.md)
+    * [List Stakes](integrations/staking/api-reference/list-stakes.md)
 * [Fiat On/Off-Ramps](integrations/fiat-on-offboarding.md)
 * [Account Abstraction on EVMs](integrations/gasless-transactions.md)
 
