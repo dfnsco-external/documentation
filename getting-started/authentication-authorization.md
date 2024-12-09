@@ -65,7 +65,7 @@ WebAuthn is a web authentication standard supported by most modern browsers, whi
 
 Essentially, WebAuthn allows you to create cryptographic keys stored on one of your device (your device enclave), and use them to sign payloads when needed using touch ID (or else). Here's some screenshots with some examples of WebAuthn prompts shown in your browser during Credential creation, or during Signing using those Credentials.
 
-![](<../.gitbook/assets/image (1) (1) (1) (1).png>) ![](<../.gitbook/assets/image (2).png>)
+![](<../.gitbook/assets/image (1) (1) (1) (1) (1).png>) ![](<../.gitbook/assets/image (2) (1).png>)
 
 {% hint style="info" %}
 You can read more about WebAuthn on [webauthn.guide](https://webauthn.guide/), and if you want you can test a WebAuthn demo on [webauthn.io](https://webauthn.io/)

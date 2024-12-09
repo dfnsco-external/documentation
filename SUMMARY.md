@@ -205,3 +205,7 @@
 * [Delegated Signing](advanced-topics/delegated-signing.md)
 * [API Idempotency](advanced-topics/api-idempotency.md)
 * [FAQ](advanced-topics/faq.md)
+
+## Guides
+
+* [Passkey Settings - Migration guide](guides/passkey-settings-migration-guide.md)

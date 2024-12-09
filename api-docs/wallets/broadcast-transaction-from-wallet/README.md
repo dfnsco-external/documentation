@@ -26,7 +26,7 @@ Sign & Broadcast transaction enables communication with any arbitrary smart cont
 
 The body of the request will depend on the chain you are targeting.   Please find the chain in question by expanding this section in the left hand navigation:
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Response Statuses
 

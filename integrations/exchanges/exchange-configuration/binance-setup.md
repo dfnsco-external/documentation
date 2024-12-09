@@ -4,7 +4,7 @@ Dfns support integrations with Binance exchange accounts.  Users must have a Bin
 
 ## API Key Generation
 
-Log into your Binance account and go to Account=>API Management at [https://www.binance.com/en/my/settings/api-management](https://www.binance.com/en/my/settings/api-management).   Click Create API, select System Generated, name the API, then sign with your passkey if requested**.**   You should see a screen that looks like this:
+Log into your Binance account and go to Account=>API Management at [https://www.binance.com/en/my/settings/api-management](https://www.binance.com/en/my/settings/api-management).   Click Create API, select System Generated, name the API, then sign with your passkey if requeste&#x64;**.**   You should see a screen that looks like this:
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2024-10-23 at 11.52.01 AM.png" alt=""><figcaption></figcaption></figure>
 
