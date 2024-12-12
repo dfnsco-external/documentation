@@ -90,7 +90,7 @@ For people using our SDKs, it basically means upgrading the SDK, and make one ch
 
 #### ➡️ For web apps:
 
-If you used our [Typescript SDK](https://github.com/dfns/dfns-sdk-ts) in a web app, you must upgrade to the newest version of `@dfns/sdk` and `@dfns/sdk-browser`, where `WebauthnSigner` was updated to take in the relying party in the constructor:
+If you used our [Typescript SDK](https://github.com/dfns/dfns-sdk-ts) in a web app, you must upgrade to the newest version of `@dfns/sdk` and `@dfns/sdk-browser`, (version `0.6.0`) where `WebauthnSigner` was updated to take in the relying party in the constructor explicitly:
 
 ```typescript
 // before
@@ -124,7 +124,7 @@ const cred = await navigator.credentials.get({
 
 #### ➡️ For React Native Apps:
 
-If you used our [Typescript SDK](https://github.com/dfns/dfns-sdk-ts) in a react native app, you must upgrade to the newest version of `@dfns/sdk` and `@dfns/sdk-react-native` where `PasskeysSigner` was updated to take in the relying party in the constructor:
+If you used our [Typescript SDK](https://github.com/dfns/dfns-sdk-ts) in a react native app, you must upgrade to the newest version of `@dfns/sdk` and `@dfns/sdk-react-native` (`0.6.0`) where `PasskeysSigner` was updated to take in the relying party explicitly in the constructor:
 
 ```typescript
 // before
@@ -134,6 +134,21 @@ const signer = new PasskeySigner()
 const signer = new PasskeySigner({
   relyingParty: { id: 'acme.com', name: 'Acme' }
 })
+```
+
+#### ➡️ For Flutter Apps:
+
+If you used our [Flutter SDK](https://pub.dev/packages/dfns_sdk_flutter), you must upgrade to the newest version of the package (`0.0.5`) where `PasskeysSigner` was updated to take in the relying party explicitly in the constructor:
+
+```kotlin
+// before
+final passkeysSigner = PasskeysSigner()
+
+// after
+final passkeysSigner = PasskeysSigner(
+    relyingPartyId: PASSKEY_RELYING_PARTY_ID,
+    relyingPartyName: PASSKEY_RELYING_PARTY_NAME
+);
 ```
 
 #### ➡️ For IOS Apps:
