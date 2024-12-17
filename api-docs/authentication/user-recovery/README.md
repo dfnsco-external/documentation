@@ -1,8 +1,12 @@
-# User Recovery
+# Recovery
 
 ## User Recovery
 
 Both `Employee` and `Enduser` user types can recover their Dfns accounts by creating recovery credentials.  `Employees` connected with your organization are provided a recovery kit when they register on the Dfns dashboard.  They should store this recovery kit securely offline.  If they need to recover their account credentials, they can do so at `app.dfns.<TLD>/recover` by providing the information from the kit and a verification code proving they still have access to their email.  Alternatively, an existing organization user with administrative permissions can deactivate and re-create their account using a different email address.&#x20;
+
+It is possible to create as many recovery credentials as you want. Any recovery credential can be used to recover a User.&#x20;
+
+Once a recovery credential is used, all the user credentials (recovery and regular) are invalidated for security reasons. The user needs to create at least one new recovery credential, this can be done during the recovery process (see [Recover User](createUserRecovery.md)).
 
 `Enduser` recovery can be built by Dfns clients as described below.&#x20;
 
