@@ -124,6 +124,7 @@
     * [TON: Generate Signature](api-docs/wallets/generate-signature-from-wallet/ton-generate-signature.md)
     * [XRP Ledger (aka Ripple): Generate Signature](api-docs/wallets/generate-signature-from-wallet/xrpledger-aka-ripple-generate-signature.md)
     * [Pseudo Networks (All other chains): Generate Signature](api-docs/wallets/generate-signature-from-wallet/pseudo-networks-all-other-chains-generate-signature.md)
+    * [Aptos: Generate Signature](api-docs/wallets/generate-signature-from-wallet/solana-generate-signature-1.md)
   * [Get Wallet Signature Request by ID](api-docs/wallets/get-wallet-signature-request-by-id.md)
   * [List Wallet Signature Requests](api-docs/wallets/list-wallet-signature-requests.md)
   * [Advanced Wallet APIs](api-docs/wallets/advanced-wallet-apis/README.md)
