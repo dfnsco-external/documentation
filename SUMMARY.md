@@ -173,6 +173,7 @@
   * [Exchange Configuration](integrations/exchanges/exchange-configuration/README.md)
     * [Kraken Setup](integrations/exchanges/exchange-configuration/kraken-setup.md)
     * [Binance Setup](integrations/exchanges/exchange-configuration/binance-setup.md)
+    * [Coinbase Prime Setup](integrations/exchanges/exchange-configuration/coinbase-prime-setup.md)
   * [API Reference](integrations/exchanges/api-reference/README.md)
     * [Create Exchange](integrations/exchanges/api-reference/create-exchange.md)
     * [List Exchanges](integrations/exchanges/api-reference/list-exchanges.md)
