@@ -413,7 +413,7 @@ Transfer classic [Stellar Assets](https://developers.stellar.org/docs/issuing-as
 }
 ```
 
-## TON <a href="#solana" id="solana"></a>
+## TON <a href="#ton" id="ton"></a>
 
 ### TON TEP74 Jetton <a href="#solana-spl" id="solana-spl"></a>
 
@@ -444,7 +444,7 @@ Transfer [Jetton](https://github.com/ton-blockchain/TEPs/blob/master/text/0074-j
 <pre class="language-json"><code class="lang-json">{
   "id": "xfr-4qc73-2kr4s-xxxxxxxxxxxxxxxx",
   "walletId": "wa-3i0nv-fa4e7-xxxxxxxxxxxxxxxx",
-  "network": "Solana",
+  "network": "Ton",
   "requester": {
     "userId": "us-3v1ag-v6b36-xxxxxxxxxxxxxxxx",
     "tokenId": "to-7mkkj-c831n-xxxxxxxxxxxxxxxx",
@@ -455,7 +455,7 @@ Transfer [Jetton](https://github.com/ton-blockchain/TEPs/blob/master/text/0074-j
     "master": "EQAIZUJZxUgjovq8C6P5tRGwSsydiCtKiwRnycPnN1k4WpFo",
     "to": "EQBfYLuQwjbBd-LAZ6eNC26XmVVxEl86MQPKG981hdTSicL_",
     "amount": "1000000"
-<strong>  }
+<strong>  },
 </strong>  "metadata": {
     "asset": {
       "symbol": "jUSDC",
