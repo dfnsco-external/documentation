@@ -2,7 +2,7 @@
 
 ## Client Data
 
-The Client Data object is used during [user registration](../../api-docs/authentication/registration/completeUserRegistration.md), [new credential creation](../../api-docs/authentication/credential-management/api-reference/createusercredential-1.md), [login](../../api-docs/authentication/login/completeLogin.md) and [action signing](../../api-docs/authentication/user-action-signing/completeUserActionSigning.md)
+The Client Data object is used during [user registration](../../api-docs/authentication/registration/completeUserRegistration.md), [new credential creation](../../api-docs/authentication/credential-management/api-reference/createusercredential-1.md), [login](../../api-docs/authentication/login/completeLogin.md), [recovery](../../api-docs/authentication/user-recovery/createUserRecovery.md) and [action signing](../../api-docs/authentication/user-action-signing/completeUserActionSigning.md)
 
 ### Fido2 credential
 
