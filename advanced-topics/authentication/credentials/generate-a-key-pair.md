@@ -14,17 +14,19 @@ Dfns recommends the following curves / modulus lengths:
 | --------- | --------------------------------- |
 | ECDSA     | secp256r1 (prime256v1 in OpenSSL) |
 | EDDSA     | Ed25519                           |
-| RSA       | 2048 bits                         |
+| RSA       | 3072 bits                         |
 
 ### Examples <a href="#create-key-examples" id="create-key-examples"></a>
 
 {% tabs %}
 {% tab title="OpenSSL CLI" %}
 ```shell
-# Recommended: Generate RSA Private Key
-openssl genrsa -out rsa2048.pem 2048
+# Recommended: Generate a EDDSA Private Key
+# NOTE: This is not the key for the blockchain, only for the API.
+# NOTE: EDDSA keys do not work in Postman!
+openssl genpkey -algorithm Ed25519 -out ed25519key.pem
 # Generate the Public Key
-openssl pkey -in rsa2048.pem -pubout -out rsa2048.public.pem
+openssl pkey -in ed25519key.pem -pubout -out ed25519key.pub.pem
 
 #OR 
 
@@ -32,16 +34,14 @@ openssl pkey -in rsa2048.pem -pubout -out rsa2048.public.pem
 # NOTE: This is not the key for the blockchain, only for the API.
 openssl ecparam -genkey -name prime256v1 -noout -out prime256v1.pem
 # Generate the Public Key
-openssl pkey -in prime256v1.pem -pubout -out prime256v1.public.pem
+openssl pkey -in prime256v1.pem -pubout -out prime256v1.pub.pem
 
 #OR 
 
-# Generate a EDDSA Private Key
-# NOTE: This is not the key for the blockchain, only for the API.
-# NOTE: EDDSA keys do not work in Postman!
-openssl genpkey -algorithm Ed25519 -out ed25519key.pem
+# Generate RSA Private Key
+openssl genrsa -out rsa3072.pem 3072
 # Generate the Public Key
-openssl pkey -in ed25519key.pem -pubout -out ed25519key.public.pem
+openssl pkey -in rsa3072.pem -pubout -out rsa3072.pub.pem
 ```
 
 On MacOS you may need to update your openssl version to add support for EDDSA keys
@@ -69,7 +69,7 @@ const ecdsaPublicKey: string = ecdsaKey.publicKey.export({ type: 'spki', format:
 const ecdsaPrivateKey: string = ecdsaKey.privateKey.export({ type: 'pkcs8', format: 'pem' })
 
 // RSA Key
-const rsaKey: crypto.KeyPairKeyObjectResult = crypto.generateKeyPairSync('rsa', { modulusLength: 2048 })
+const rsaKey: crypto.KeyPairKeyObjectResult = crypto.generateKeyPairSync('rsa', { modulusLength: 3072 })
 const rsaPublicKey: string = rsaKey.publicKey.export({ type: 'pkcs1', format: 'pem' })
 const rsaPrivateKey: string = rsaKey.privateKey.export({ type: 'pkcs1', format: 'pem' })
 ```
@@ -116,7 +116,7 @@ const ecdsaPrivateKey = await exportPrivateKey(ecdsaKey)
 const rsaKey = await window.crypto.subtle.generateKey(
   {
     name: 'RSA-PSS',
-    modulusLength: 2048,
+    modulusLength: 3072,
     publicExponent: new Uint8Array([1, 0, 1]),
     hash: "SHA-256",
   },
@@ -137,7 +137,7 @@ aws kms create-key --key-spec ECC_NIST_P256 --key-usage SIGN_VERIFY
 aws kms get-public-key --key-id <KEY_ID>
 
 # Generate a RSA Private Key
-aws kms create-key --key-spec RSA_2048 --key-usage SIGN_VERIFY
+aws kms create-key --key-spec RSA_3072 --key-usage SIGN_VERIFY
 # Get the Public Key
 aws kms get-public-key --key-id <KEY_ID>
 ```
