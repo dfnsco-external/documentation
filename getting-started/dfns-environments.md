@@ -18,7 +18,7 @@ For the production environment should be interpreted as a post to:
 
 If you have any questions or concerns about our environments, don't hesitate to reach out to us: [docs@dfns.co](https://email:docs@dfns.co).
 
-### Environment IPs
+### IPs
 
 You can use the following values to whitelist Dfns IPs for webhook delivery:
 
