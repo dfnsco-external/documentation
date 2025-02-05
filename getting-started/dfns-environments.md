@@ -17,3 +17,11 @@ For the production environment should be interpreted as a post to:
 `https://api.dfns.io/assets/asset-accounts/{AssetAccountId}/payments`
 
 If you have any questions or concerns about our environments, don't hesitate to reach out to us: [docs@dfns.co](https://email:docs@dfns.co).
+
+### Environment IPs
+
+You can use the following values to whitelist Dfns IPs for webhook delivery:
+
+* Staging: `52.47.197.63`
+* Production: `35.181.116.68`
+
