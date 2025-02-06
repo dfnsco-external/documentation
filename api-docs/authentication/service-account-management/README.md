@@ -1,5 +1,15 @@
 # Service Accounts
 
-Service Accounts enable programmatic access to Dfns and replace legacy API Keys in our authentication system.  Service accounts exist at the same level as human users in the system. They must use a secret signing key and the corresponding public key must be passed into [Create Service Account](createServiceAccount.md).  They also must have their own [permissions](../../permissions/permissions/) assigned in order to access API endpoints.   Service Accounts also return an access token with a configurable TTL of anywhere from 1 to 730 days.&#x20;
+Service Accounts can be viewed as "Machine Users" in your Dfns organisation. They are often used authenticate and interact with Dfns API from your server, on behalf of your organisation.
 
-Service Accounts are intended to be used for any server side interaction with Dfns.  Among other use cases, this includes [delegated user management](../delegated-auth/).  Please make sure to keep both the signing secret and access token associated with the service account secure.  Dfns recommends using services like AWS Secrets Manager or comparable services on other public cloud platforms.
+As any user, they must sign their API requests (cf [User Action Signing](../user-action-signing/)). So before creating a Service Account, an asymmetric keypair must be created. It will be used as the Service Account [Credential](../credential-management/credentials-overview.md). The public part of this key is passed during the Service Account creation.
+
+Service Accounts also have configurable TTL of anywhere from 1 to 730 days.
+
+When created, the Service Account will return the Service Account access token. Make sure to keep both the signing secret (private part of the asymmetric keypair) and the Service Account access token secure.
+
+{% hint style="info" %}
+Dfns recommends using services like AWS Secrets Manager or comparable services on other public cloud platforms
+{% endhint %}
+
+As any user, Service Accounts can also be assigned [permissions](../../permissions/permissions/) in order to use API endpoints.
