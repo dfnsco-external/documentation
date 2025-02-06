@@ -14,7 +14,7 @@ This page describes the architecture behind our Delegated Signing solution, how 
 
 The following diagram illustrates the Delegated Signing architecture:&#x20;
 
-<figure><img src="https://lh3.googleusercontent.com/FAFzaeh_Fg1o_60hnDkTFNX8D0kYRrCDeLzy9vsm6aQNkwAKTJjpblg2nY3DBev1kiLIPkLCT9BeL-b2SZx1cLj4Au3n2RlTVAi8eXOySfkodyi5fB2IDMPc3FnUC56Xxh5Y2KYDa34yqjxf59eWecI" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/DelegatedSigningDiagram.png" alt=""><figcaption></figcaption></figure>
 
 The key shares (labeled 1 through 5 above on the right side) are encrypted and stored in our decentralized signer network. Our signers implement leading peer-reviewed cryptographic protocols for distributed key generation and threshold signatures. They are spread across Tier 3+ data centers and different geographical regions to ensure high levels of service availability, fault-tolerance, and business continuity.&#x20;
 
