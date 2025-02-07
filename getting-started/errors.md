@@ -63,7 +63,7 @@ All requests to an authenticated endpoint need to include a JWT in the `Authenti
 ```json
 {
   "error": {
-    "message": "Not Authorized."
+    "message": "user token is missing or invalid"
   }
 }
 ```
