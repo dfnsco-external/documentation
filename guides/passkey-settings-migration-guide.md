@@ -66,13 +66,13 @@ Only future will tell if we go a step further, and also decide to revise our App
 
 To whitelist a new domain (`rpId`) where your users need to create/user passkeys, you can now go to Dfns dashboard, into `Settings > Passkeys`, and whitelist the domain from there:
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 When whitelisting a Relying Party ID, every origin in the “realm” of this `rpID` (all subdomains + associated mobile apps) will be allowed for passkeys to be used. That’s what the wildcard "`*`" means in the screenshot above.
 
 In case you need to specifically whitelist only a specific subset of origins from which a passkey should be used – _for most use cases, this shouldn’t be necessary_ – you can specify “only specific origins” in the whitelisting form, and specify them:
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 All `rpIds` previously specified in your existing Dfns Applications will already be pre-filled in these new Passkey Settings, with `origins = *`.
 
